@@ -14,11 +14,13 @@
 
     @endforeach
 
+    {{--
     <form method="POST" action="/posts/{{ $post->id }}/comments">
         {{ csrf_field() }}
         <textarea name="body" placeholder="Text"></textarea>
         <button type="submit">Submit</button>
     </form>
+    --}}
 
 
 @endsection

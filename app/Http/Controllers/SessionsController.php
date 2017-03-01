@@ -16,13 +16,14 @@ class SessionsController extends Controller
     }
 
     public function store(){
-        if (! auth()->attempt(request(['email','password']))){
-            return back()->withErrors([
-                'message' => 'Please check your credentials and try again'
-            ]);
+
+        if ( auth()->attempt(request(['email','password']))){
+            return redirect()->home();
         }
 
-        return redirect()->home();
+        return back()->withErrors([
+            'message' => 'Please check your credentials and try again'
+        ]);
     }
 
     public function destroy(){

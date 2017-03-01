@@ -15,8 +15,28 @@ class PostsController extends Controller
 
     public function index(){
 
+        //$posts = Post::all();
         $posts = Post::all();
+        /*
+        $posts = Post::latest()->filter(request(['month','year']))->get();
 
+         ARCHIVES
+        if ($month = request('month')) {
+            $posts->whereMonth('created_at', Carbon::parse($month)->month);
+        }
+
+        if ($year = request('year')) {
+            $posts->whereYear('created_at', $year);
+        }
+
+        $posts = $posts->get();
+
+        $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
+            ->groupBy('year','month')
+            ->orderByRaw('min(created_at) desc')
+            ->get()
+            ->toArray();
+        */
 
         return view('posts.index', compact('posts'));
 
@@ -59,8 +79,6 @@ class PostsController extends Controller
             'title' => request('title'),
             'body' => request('body')
 
-
-
         ]);
         */
         $this->validate(request(),[
@@ -68,11 +86,11 @@ class PostsController extends Controller
             'body' => 'required'
         ]);
 
-        auth()->user()->publish(
-          new Post(request(['title', 'body']))
-        );
+        //see in User Model - publish function
+        auth()->user()->publish( new Post( request(['title', 'body']) ) );
 
-        /*
+
+        /* Method upper can be swapped with this, but delete publish func in User Model
         Post::create([
             'title' => request('title'),
             'body' => request('body'),

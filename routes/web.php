@@ -15,17 +15,19 @@
 use App\Task;
 
 
-Route::get('/', 'PostsController@index')->name('home');
+Route::get('/', 'PostsController@index');
+
+Route::get('/home', 'PostsController@index')->name('home');
 
 Route::get('/posts', 'PostsController@index');
 
+
 Route::get('/posts/create', 'PostsController@create');
-
-Route::post('/posts/{post}/comments', 'CommentsController@store');
-
 Route::post('/posts/', 'PostsController@store');
 
 Route::get('/posts/{post}', 'PostsController@show');
+Route::post('/posts/{post}/comments', 'CommentsController@store');
+
 
 
 Route::get('/tasks', 'TasksController@index');

@@ -1,7 +1,7 @@
 <section class="navigation">
 
     @if (Auth::check())
-    <div>{{ Auth::user()->name }}</div>
+    <h1>{{ Auth::user()->name }}</h1>
     @endif
 
     <a href="">
