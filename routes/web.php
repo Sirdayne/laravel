@@ -15,7 +15,7 @@
 use App\Task;
 
 
-Route::get('/', 'PostsController@index');
+Route::get('/', 'PagesController@index');
 
 Route::get('/home', 'PostsController@index')->name('home');
 
