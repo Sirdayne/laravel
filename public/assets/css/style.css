@@ -2285,6 +2285,9 @@ body{
 }
 .sh-left-dealers{
     margin-top: 50px;
+    
+    width: 40%;
+    margin-right: 0%;
 }
 
 .sh-left h1{
@@ -2416,16 +2419,21 @@ body{
 
 .dealers-right{
     float: left;
-    width: 40%;
+    width: 60%;
     
-    margin-left: 10%;
+    margin-left: 0%;
 }
 
 .wallpapers-right{
     float: left;
     width: 50%;
     
-    margin-left: 0%;
+    margin-left: 10%;
+}
+
+.wallpapers-right img{
+    float: left;
+    width: 100%;
 }
 
 .dealers-right img{
@@ -2580,11 +2588,15 @@ body{
     
     margin-top: 50px;
     
-    background: url(../img/jal-foot.png) center center no-repeat;
+    background: url(../img/pre-bus.png) center center no-repeat;
     background-size: cover;
 }
 .sew-footer{
     background: url(../img/sew-foot.png) center center no-repeat;
+    background-size: cover;
+}
+.pre-floor{
+    background: url(../img/pre-floor.png) center center no-repeat;
     background-size: cover;
 }
 .pre-footer h1{

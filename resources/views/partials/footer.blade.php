@@ -9,14 +9,13 @@
         </div>
 
         <div class="footer-part footer-part-menu">
-            <div class="f-nav"><a href="index.html">ГЛАВНАЯ</a></div>
-            <div class="f-nav"><a href="about.html">О НАС</a></div>
-            <!--<div class="f-nav"><a href="discounts.html">АКЦИИ И ЦЕНЫ</a></div>-->
-            <div class="f-nav"><a href="types.html">ВИДЫ ШТОР</a></div>
-            <div class="f-nav"><a href="portfolio.html">ПОРТФОЛИО</a></div>
-            <div class="f-nav"><a href="news.html">НОВОСТИ</a></div>
-            <div class="f-nav"><a href="reviews.html">ОТЗЫВЫ</a></div>
-            <div class="f-nav"><a href="contacts.html">КОНТАКТЫ</a></div>
+            <div class="f-nav"><a href="/">ГЛАВНАЯ</a></div>
+            <div class="f-nav"><a href="about">О НАС</a></div>
+            <div class="f-nav"><a href="types">ВИДЫ ШТОР</a></div>
+            <div class="f-nav"><a href="portfolio">ПОРТФОЛИО</a></div>
+            <div class="f-nav"><a href="news">НОВОСТИ</a></div>
+            <div class="f-nav"><a href="reviews">ОТЗЫВЫ</a></div>
+            <div class="f-nav"><a href="contacts">КОНТАКТЫ</a></div>
         </div>
 
 
@@ -54,6 +53,298 @@
     </div>
 
 </footer>
+
+
+
+    <script src="/assets/js/lightbox-plus-jquery.js"></script>
+
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <script src="/assets/js/jquery.waypoints.min.js"></script>
+
+    <script src="/assets/js/wow.min.js"></script>
+    <script>
+        if ($(window).width() > 1200) {
+            new WOW().init();
+        }
+    </script>
+
+    <script src="/assets/js/maskedinput.js"></script>
+    <script type="text/javascript">
+        jQuery(function($){$("#client-tel-for-consult").mask("+7(999)999-99-99");});
+        jQuery(function($){$("#client-tel-for-consult-2").mask("+7(999)999-99-99");});
+    </script>
+
+    <script src="/assets/js/script.js"></script>
+
+    <script src="/assets/js/slick.min.js"></script>
+
+    <script src="/assets/js/window.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            /* ЦИФРЫ */
+
+            var RunOnce = 1;
+
+            $('.js-numbers').waypoint( function(dir) {
+
+                if (RunOnce == 1) {
+
+                    RunOnce = false;
+
+                    $({n: 0}).animate({n: 10}, {
+                        duration: 2E3,
+                        step: function (a) {
+                            $("#val-1").html(Math.round(a))
+                        }
+                    })
+                    $({n: 0}).animate({n: 2000}, {
+                        duration: 2E3,
+                        step: function (a) {
+                            $("#val-2").html(Math.round(a))
+                        }
+                    })
+                    $({n: 0}).animate({n: 10000}, {
+                        duration: 2E3,
+                        step: function (a) {
+                            $("#val-3").html(Math.round(a))
+                        }
+                    })
+                    $({n: 0}).animate({n: 3}, {
+                        duration: 2E3,
+                        step: function (a) {
+                            $("#val-4").html(Math.round(a))
+                        }
+                    })
+
+                }
+
+            }, {
+                offset: '100%'
+            });
+
+
+
+            /* SLICK SLIDERS */
+
+            $('#slick-slider').slick({
+                centerMode: true,
+                slidesToShow: 3,
+                centerPadding: '0px',
+                arrows: true,
+                dots: false,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            centerMode: true,
+                            slidesToShow: 3,
+                            centerPadding: '0px',
+                            arrows: true,
+                            dots: false,
+                            autoplay: true,
+                            autoplaySpeed: 4000
+                        }
+                    },
+                    {
+                        breakpoint: 1000,
+                        settings: {
+                            centerMode: true,
+                            slidesToShow: 3,
+                            centerPadding: '0px',
+                            arrows: true,
+                            dots: false,
+                            autoplay: true,
+                            autoplaySpeed: 4000
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            centerMode: true,
+                            slidesToShow: 2,
+                            centerPadding: '0px',
+                            arrows: true,
+                            dots: false,
+                            autoplay: true,
+                            autoplaySpeed: 4000
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            centerMode: true,
+                            slidesToShow: 1,
+                            centerPadding: '0px',
+                            arrows: true,
+                            dots: false,
+                            autoplay: true,
+                            autoplaySpeed: 4000
+                        }
+                    }
+                ]
+            });
+
+            $('#slick-slider-2').slick({
+                centerMode: true,
+                slidesToShow: 1,
+                centerPadding: '0px',
+                arrows: true,
+                dots: false,
+                autoplay: true,
+                autoplaySpeed: 4000
+            });
+
+            $('#slick-slider-3').slick({
+                centerMode: false,
+                slidesToShow: 1,
+                centerPadding: '0px',
+                arrows: true,
+                dots: false,
+                autoplay: false
+            });
+    
+            $('#slick-slider-4').slick({
+                centerMode: false,
+                slidesToShow: 1,
+                centerPadding: '0px',
+                arrows: true,
+                dots: false,
+                autoplay: false
+            });
+
+        
+        $('.slick-slider-4').slick({
+            centerMode: false,
+            slidesToShow: 1,
+            centerPadding: '0px',
+            arrows: true,
+            dots: false,
+            autoplay: false
+        });
+
+    
+    $('.js-decor').fadeOut(300);
+    $('.js-decor').eq(0).fadeIn(100);
+    
+    
+    $('.decor-filter').click(function(){
+        var index = $('.decor-filter').index(this);
+        
+        $('.js-decor').hide();
+        $('.js-decor').eq(index).show();
+        
+        $('.decor-filter').removeClass('decor-active');
+        $('.decor-filter').eq(index).addClass('decor-active');
+    });
+    
+
+            /* ЭТАПЫ РАБОТЫ */
+
+            var count = 3;
+
+            $('.js-mw-1').click(function() {
+                $('.js-mw-1, .js-mwl-1').addClass("mw-active");
+                $('.js-mw-2, .js-mwl-2, .js-mw-3, .js-mwl-3, .js-mw-4, .js-mwl-4').removeClass("mw-active");
+
+                $('.mwi-2, .mwi-3, .mwi-4').fadeOut(500);
+                $('.mwi-1').fadeIn(500);
+
+                count = 4;
+            });
+
+            $('.js-mw-2').click(function() {
+                $('.js-mw-1, .js-mwl-1, .js-mw-2, .js-mwl-2').addClass("mw-active");
+                $('.js-mw-3, .js-mwl-3, .js-mw-4, .js-mwl-4').removeClass("mw-active");
+
+                $('.mwi-1, .mwi-3, .mwi-4').fadeOut(500);
+                $('.mwi-2').fadeIn(500);
+
+                count = 5;
+            });
+
+            $('.js-mw-3').click(function() {
+                $('.js-mw-1, .js-mwl-1, .js-mw-2, .js-mwl-2, .js-mw-3, .js-mwl-3').addClass("mw-active");
+                $('.js-mw-4, .js-mwl-4').removeClass("mw-active");
+
+                $('.mwi-1, .mwi-2, .mwi-4').fadeOut(500);
+                $('.mwi-3').fadeIn(500);
+
+                count = 6;
+            });
+
+            $('.js-mw-4').click(function() {
+                $('.js-mw-1, .js-mwl-1, .js-mw-2, .js-mwl-2, .js-mw-3, .js-mwl-3, .js-mw-4, .js-mwl-4').addClass("mw-active");
+
+                $('.mwi-1, .mwi-2, .mwi-3').fadeOut(500);
+                $('.mwi-4').fadeIn(500);
+
+                count = 7;
+            });
+
+            var timer = 0;
+
+            var indexSlider = 1;
+
+            var sliderCondition = 0;
+
+            window.setInterval(function(){
+                ++timer;
+
+                if( sliderCondition == 1 ){
+
+                    count++;
+                    indexSlider = count % 4;
+                    $('.mw-circle').eq(indexSlider).click();
+
+                    sliderCondition = 1;
+                }
+
+            }, 2000);
+
+            $('.mw-circle').click(function() {
+                sliderCondition = 0;
+            });
+
+            $('.mn-title').waypoint({
+                handler: function(direction) {
+                    if (direction === 'down') {
+
+                        sliderCondition = 1;
+
+                    }
+                    else {
+
+                        sliderCondition = 1;
+
+                    }
+                },
+                offset: 0
+            });
+
+        });
+    </script>
+
+
+<script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    
+    <script type="text/javascript">
+    var map;
+
+    DG.then(function () {
+        map = DG.map('map', {
+            center: [51.094528, 71.427312],
+            zoom: 17
+        });
+        DG.marker([51.094528, 71.427312]).addTo(map);
+    });
+    </script>
+
 
 
 </body>

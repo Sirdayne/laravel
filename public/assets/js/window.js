@@ -39,13 +39,13 @@ $(document).ready(function(){
             result = timer % 2;
                 
                 if (result == 0){
-                    $('.header-slide').removeClass('hs-5').addClass('hs-4');
+                    $('.header-slide').removeClass('hs-4').addClass('hs-5');
                     $('.header-slider-title').hide();
                     $('.js-title-1').show();
                 }
             
                 if (result == 1){
-                    $('.header-slide').removeClass('hs-4').addClass('hs-5');
+                    $('.header-slide').removeClass('hs-5').addClass('hs-4');
                     $('.header-slider-title').hide();
                     $('.js-title-2').show();
                 }
@@ -64,6 +64,8 @@ $(document).ready(function(){
     var fixPrice = [16000,18000,16000,16000,16000,10000];
     var fixPriceRoll = [7500,17000,40000,5000,40000,20000];
     
+    var coefPrice = [2, 2, 1, 1, 1.8, 3];
+    
     var resultPrice;
     var quantity = 1;
     var indexCalc = 0;
@@ -75,13 +77,11 @@ $(document).ready(function(){
     
     function calculateResult(){// ФОРМУЛА - РЕЗУЛЬТАТ ДЛЯ ШТОР
         
-        quantity = $('#js-quantity').val();
-        
-        if (indexCalc == 3){
-            resultPrice = fixPrice[indexCalc] * quantity * jsWidth * jsHeight;
+        if (indexCalc == 2){
+            resultPrice = fixPrice[indexCalc] * coefPrice[indexCalc] * quantity * jsWidth * jsHeight;
         }
         else{
-            resultPrice = fixPrice[indexCalc] * quantity * jsWidth; 
+            resultPrice = fixPrice[indexCalc] * coefPrice[indexCalc] * quantity * jsWidth; 
         }
         
         $('#option-price').html('от '+resultPrice.toLocaleString()+' тг.');
@@ -89,25 +89,18 @@ $(document).ready(function(){
     
     function calculateResultRoll(){// ФОРМУЛА - РЕЗУЛЬТАТ ДЛЯ РОЛЛ-ШТОР
         
-        quantity = $('#js-quantity').val();
-        
         resultPrice = fixPriceRoll[indexCalc] * quantity * jsWidth * jsHeight;
         
         $('#option-price').html('от '+resultPrice.toLocaleString()+' тг.');
     }
     
     // ИЗМЕНЕНИЕ ВЫСОТЫ И ШИРИНЫ В КАЛЬКУЛЯТОРЕ
-    $('#js-width, #js-height').change(function() {
-        
+    function changeValues(){
         jsHeight = $('#js-height').val();
         jsWidth = $('#js-width').val();
-        $('#js-size').html(jsWidth+'x'+jsHeight+' м.');
+        quantity = $('#js-quantity').val();
         
-        calculateResult();
-    });
-    
-    // ИЗМЕНЕНИЯ КОЛИЧЕСТВА ШТОР
-    $('#js-quantity').change(function() {
+        $('#js-size').html(jsWidth+'x'+jsHeight+' м.');
         
         if (indexBtnFilterBig == 0){
             calculateResult();
@@ -115,7 +108,14 @@ $(document).ready(function(){
         else{
             calculateResultRoll();
         }
+    }
     
+    $('#js-width, #js-height, #js-quantity').change(function() {
+        changeValues();
+    });
+    
+    $('.main-filters').mousemove(function(){
+        changeValues();                      
     });
     
     /* ФИЛЬТРЫ ВЫБЕРИТЕ ШТОРЫ РОЛЛ-ШТОРЫ */
@@ -142,10 +142,10 @@ $(document).ready(function(){
         
         if (indexBtnFilterBig == 0){
             indexCalc = indexFilterText;
-            calculateResult();
+            changeValues();
         }else{
             indexCalc = indexFilterTextRoll;
-            calculateResultRoll();
+            changeValues();
         }
         
     });
@@ -164,7 +164,7 @@ $(document).ready(function(){
         
         indexCalc = indexFilterText;
         
-        calculateResult();
+        changeValues(); 
         
     });
     // НАЖАТИЕ НА ФИЛЬТР РОЛЛ
@@ -179,7 +179,7 @@ $(document).ready(function(){
         
         indexCalc = indexFilterTextRoll;
         
-        calculateResultRoll();
+        changeValues(); 
         
         $('.filter-text-roll').removeClass('filter-active');
         $(this).addClass('filter-active');

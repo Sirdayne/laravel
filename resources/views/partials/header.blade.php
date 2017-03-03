@@ -6,25 +6,30 @@
 
 <head>
 
-    <meta charset="utf-8">
+	<meta charset="utf-8">
 
-    <title>Window Fashion - Акции</title>
-    <meta name="description" content="">
+	<title>Window Fashion</title>
+	<meta name="description" content="">
+	
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" href="/assets/css/fonts.css">
-    <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/media.css">
-    <link rel="stylesheet" href="/assets/css/animate.css">
-    <link rel="stylesheet" href="/assets/css/slick.css">
-
+	<link rel="stylesheet" href="/assets/css/reset.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/animate.css">
+	<link rel="stylesheet" href="/assets/css/slick.css">
+	
+	<link rel="stylesheet" href="/assets/css/media.css">
+	
+	<link rel="stylesheet" href="/assets/css/lightbox.css">
+  
 </head>
-<body>
+<body>   
 
-@include('partials.navigation')
+<div class="navigation">
+	@include('partials.navigation')
+</div>
