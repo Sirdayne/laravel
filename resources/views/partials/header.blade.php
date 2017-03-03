@@ -26,6 +26,8 @@
 	<link rel="stylesheet" href="/assets/css/media.css">
 	
 	<link rel="stylesheet" href="/assets/css/lightbox.css">
+
+	<link rel="stylesheet" href="/css/laravel.css">
   
 </head>
 <body>   

@@ -2,7 +2,12 @@
 
 @section('content')
 
-    <h1>Register</h1>
+    <div class="navigation-title">Регистрация</div>
+
+    <section class="lara-section">
+    <div class="wrap">
+
+    <h3>Введите данные в форму</h3>
 
     @if (count($errors))
         <div>
@@ -15,12 +20,15 @@
 
     <form method="POST" action="/register">
         {{ csrf_field() }}
-        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="name" placeholder="Имя">
         <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="password_confirmation" placeholder="Confirm password">
+        <input type="password" name="password" placeholder="Пароль">
+        <input type="password" name="password_confirmation" placeholder="Подтвердите пароль">
 
-        <button type="submit">Submit</button>
+        <button type="submit">Отправить</button>
     </form>
+
+    </div>
+    </section>
 
 @endsection

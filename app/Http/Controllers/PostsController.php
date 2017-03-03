@@ -83,12 +83,19 @@ class PostsController extends Controller
         */
         $this->validate(request(),[
             'title' => 'required|min:3|max:20',
+            'description' => 'required|max:130',
             'body' => 'required'
         ]);
 
         //see in User Model - publish function
-        auth()->user()->publish( new Post( request(['title', 'body']) ) );
+        //auth()->user()->publish( new Post( request(['title', 'body']) ) );
 
+        Post::create([
+            'title' => request('title'),
+            'description' => request('description'),
+            'body' => request('body'),
+            'user_id' => auth()->id()
+        ]);
 
         /* Method upper can be swapped with this, but delete publish func in User Model
         Post::create([
@@ -98,6 +105,6 @@ class PostsController extends Controller
         ]);
         */
 
-        return redirect('/');
+        return redirect('/posts');
     }
 }

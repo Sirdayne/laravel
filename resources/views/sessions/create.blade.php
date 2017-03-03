@@ -2,7 +2,12 @@
 
 @section('content')
 
-    <h1>Sign in</h1>
+    <div class="navigation-title">Авторизация</div>
+
+    <section class="lara-section">
+    <div class="wrap">
+
+    <h3>Введите почту и пароль</h3>
 
     @if (count($errors))
         <div>
@@ -16,9 +21,13 @@
     <form method="POST" action="/login">
         {{ csrf_field() }}
         <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="password" placeholder="Пароль">
 
-        <button type="submit">Submit</button>
+        <button type="submit" class="lara-btn">Отправить</button>
     </form>
+
+    </div>
+    </section>
+
 
 @endsection

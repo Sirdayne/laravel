@@ -10,12 +10,12 @@
 
         <div class="footer-part footer-part-menu">
             <div class="f-nav"><a href="/">ГЛАВНАЯ</a></div>
-            <div class="f-nav"><a href="about">О НАС</a></div>
-            <div class="f-nav"><a href="types">ВИДЫ ШТОР</a></div>
-            <div class="f-nav"><a href="portfolio">ПОРТФОЛИО</a></div>
-            <div class="f-nav"><a href="news">НОВОСТИ</a></div>
-            <div class="f-nav"><a href="reviews">ОТЗЫВЫ</a></div>
-            <div class="f-nav"><a href="contacts">КОНТАКТЫ</a></div>
+            <div class="f-nav"><a href="/about">О НАС</a></div>
+            <div class="f-nav"><a href="/types">ВИДЫ ШТОР</a></div>
+            <div class="f-nav"><a href="/portfolio">ПОРТФОЛИО</a></div>
+            <div class="f-nav"><a href="/posts">НОВОСТИ</a></div>
+            <div class="f-nav"><a href="/reviews">ОТЗЫВЫ</a></div>
+            <div class="f-nav"><a href="/contacts">КОНТАКТЫ</a></div>
         </div>
 
 

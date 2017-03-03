@@ -29,7 +29,7 @@
 
             <div class="modal-title">Заполните поля ниже и отправьте нам заказ</div>
 
-            <form method="post" action="">
+            <form method="post" action="" class="js-form">
                 <!-- Hidden Required Fields -->
                 <input type="hidden" name="project_name" value="window-fashion.kz">
                 <input type="hidden" name="admin_email" value="tester@ginnova.kz">

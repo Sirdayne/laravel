@@ -1,0 +1,93 @@
+.lara-section{
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+
+    min-height: 320px;
+    padding: 50px;
+}
+.lara-section h3{
+    float: left;
+    width: 100%;
+    margin: 5px 5px 5px 0;
+
+    font-size: 17px;
+    margin: 25px 0;
+}
+.lara-section input{
+    display: block;
+    margin: 5px 5px 5px 0;
+
+    border: none;
+    outline: none;
+
+    font-family: "GothamProRegular";
+
+    padding: 9px 25px;
+
+    border: 1px solid #1A80C3;
+    font-size: 15px;
+
+    width: 190px;
+}
+.lara-section input[type="file"]{
+    border: none;
+}
+.lara-section textarea{
+    display: block;
+    margin: 5px 5px 5px 0;
+
+    border: none;
+    outline: none;
+
+    font-family: "GothamProRegular";
+
+    padding: 9px 25px;
+
+    border: 1px solid #1A80C3;
+    font-size: 15px;
+
+    width: 190px;
+}
+.lara-section button{
+    display: block;
+    margin: 5px 5px 5px 0;
+
+    border: none;
+    outline: none;
+
+    padding: 9px 25px;
+
+    background: #1A80C3;
+    color: #fff;
+    border: 1px solid #1A80C3;
+    font-size: 15px;
+
+    -webkit-transition: .5s cubic-bezier(.18,.63,.89,.67);
+    transition: .5s cubic-bezier(.18,.63,.89,.67);
+}
+.lara-section button:hover{
+    color: #1A80C3;
+    background: #fff;
+}
+.lara-btn{
+    display: block;
+    margin: 5px 5px 5px 0;
+
+    border: none;
+    outline: none;
+
+    padding: 9px 25px;
+
+    background: #1A80C3;
+    color: #fff;
+    border: 1px solid #1A80C3;
+    font-size: 15px;
+
+    -webkit-transition: .5s cubic-bezier(.18,.63,.89,.67);
+    transition: .5s cubic-bezier(.18,.63,.89,.67);
+}
+.lara-btn:hover{
+    color: #1A80C3;
+    background: #fff;
+}

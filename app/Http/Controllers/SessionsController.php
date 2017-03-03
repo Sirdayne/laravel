@@ -18,17 +18,17 @@ class SessionsController extends Controller
     public function store(){
 
         if ( auth()->attempt(request(['email','password']))){
-            return redirect()->home();
+            return redirect('/posts/create');
         }
 
         return back()->withErrors([
-            'message' => 'Please check your credentials and try again'
+            'message' => 'Вы ввели неверный логин или пароль, попробуйте еще раз'
         ]);
     }
 
     public function destroy(){
         auth()->logout();
 
-        return redirect()->home();
+        return redirect('/');
     }
 }

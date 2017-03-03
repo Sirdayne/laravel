@@ -2,7 +2,13 @@
 
 @section('content')
 
-    <h2>Create a post</h2>
+    <div class="navigation-title">Новая новость</div>
+
+    <section class="lara-section">
+    <div class="wrap">
+
+    <h3>Введите данные новости в форму</h3>
+
 
     @if (count($errors))
     <div>
@@ -15,10 +21,15 @@
 
     <form method="POST" action="/posts">
         {{ csrf_field() }}
-        <input type="text" name="title" placeholder="Title">
-        <textarea name="body" placeholder="Text"></textarea>
-        <button type="submit">Submit</button>
+        <input type="text" name="title" placeholder="Заголовок">
+        <input type="file" name="image">
+        <textarea name="description" placeholder="Краткое описание"></textarea>
+        <textarea name="body" placeholder="Напишите новость..."></textarea>
+        <button type="submit">Отправить</button>
     </form>
+
+    </div>
+    </section>
 
 
 @endsection

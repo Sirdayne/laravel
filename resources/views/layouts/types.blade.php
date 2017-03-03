@@ -23,6 +23,8 @@
 	<link rel="stylesheet" href="/assets/css/media.css">
 	<link rel="stylesheet" href="/assets/css/animate.css">
 	<link rel="stylesheet" href="/assets/css/slick.css">
+
+    <link rel="stylesheet" href="/css/laravel.css">
    
     <link rel="stylesheet" href="/assets/css/lightbox.css">
     

@@ -14,7 +14,7 @@ class RegistrationController extends Controller
 
     public function store(){
         //validate form
-        $this->validate(request(),[
+            $this->validate(request(),[
             'name' => 'required|min:3|max:20',
             'email' => 'required|email',
             'password' => 'required|confirmed'
@@ -35,6 +35,6 @@ class RegistrationController extends Controller
         auth()->login($user);
 
         //redirect to the home page
-        return redirect()->home();
+        return redirect('/posts/create');
     }
 }
