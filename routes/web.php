@@ -14,12 +14,10 @@
 
 use App\Task;
 
-
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/types', 'PagesController@types');
 Route::get('/contacts', 'PagesController@contacts');
-/* services pages */
 Route::get('/jalousie', 'PagesController@jalousie');
 Route::get('/sew', 'PagesController@sew');
 Route::get('/decor', 'PagesController@decor');
@@ -31,20 +29,31 @@ Route::get('/dealers', 'PagesController@dealers');
 
 Route::get('/posts', 'PostsController@index');
 Route::get('/posts/create', 'PostsController@create');
-Route::post('/posts/', 'PostsController@store');
 Route::get('/posts/{post}', 'PostsController@show');
-Route::post('/posts/{post}/comments', 'CommentsController@store');
+Route::post('/posts/store', 'PostsController@store');
+//Route::post('/posts/{post}/comments', 'CommentsController@store');
+Route::get('/posts/edit/{post}', 'PostsController@edit');
+Route::post('/posts/update', 'PostsController@update');
+Route::get('/posts/destroy/{post}', 'PostsController@destroy');
 
 
-Route::get('/tasks', 'TasksController@index');
-Route::get('/tasks/{task}', 'TasksController@store');
+Route::get('/reviews', 'ReviewController@index');
+Route::get('/reviews/create', 'ReviewController@create');
+Route::post('/reviews/store', 'ReviewController@store');
+Route::get('/reviews/destroy/{review}', 'ReviewController@destroy');
+
+
+Route::get('/portfolio', 'PortfolioController@index');
+Route::get('/portfolio/create', 'PortfolioController@create');
+Route::post('/portfolio/store', 'PortfolioController@store');
+Route::get('/portfolio/destroy/{portfolio}', 'PortfolioController@destroy');
 
 
 Route::get('/register', 'RegistrationController@create');
 Route::post('/register', 'RegistrationController@store');
 
-
 Route::get('/login', 'SessionsController@create');
 Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy');
 
+Route::get('/admin', 'AdminController@index');
