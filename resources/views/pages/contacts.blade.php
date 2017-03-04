@@ -51,6 +51,22 @@
     </div>
     
     <div id="map" style="float:left; width: 100%; height:500px; position:relative; z-index:1;"></div>
+
+    
+    <script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    
+    <script type="text/javascript">
+        var map;
+
+        DG.then(function () {
+            map = DG.map('map', {
+                center: [51.094528, 71.427312],
+                zoom: 17
+            });
+            DG.marker([51.094528, 71.427312]).addTo(map);
+        });
+    </script>
+
             
 
 @endsection

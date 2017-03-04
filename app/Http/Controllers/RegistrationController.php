@@ -35,6 +35,6 @@ class RegistrationController extends Controller
         auth()->login($user);
 
         //redirect to the home page
-        return redirect('/posts/create');
+        return redirect('/admin');
     }
 }

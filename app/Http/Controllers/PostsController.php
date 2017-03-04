@@ -6,6 +6,12 @@ use App\Post;
 
 use Illuminate\Http\Request;
 
+use Carbon\Carbon;
+
+use Illuminate\Support\Facades\Input;
+
+use Session;
+
 class PostsController extends Controller
 {
 
@@ -15,42 +21,11 @@ class PostsController extends Controller
 
     public function index(){
 
-        //$posts = Post::all();
-        $posts = Post::all();
-        /*
-        $posts = Post::latest()->filter(request(['month','year']))->get();
-
-         ARCHIVES
-        if ($month = request('month')) {
-            $posts->whereMonth('created_at', Carbon::parse($month)->month);
-        }
-
-        if ($year = request('year')) {
-            $posts->whereYear('created_at', $year);
-        }
-
-        $posts = $posts->get();
-
-        $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
-            ->groupBy('year','month')
-            ->orderByRaw('min(created_at) desc')
-            ->get()
-            ->toArray();
-        */
+        $posts = Post::orderBy('created_at','DESC')->paginate(6);
 
         return view('posts.index', compact('posts'));
 
     }
-
-    /*
-    public function show($id){
-
-        $post = Post::find($id);
-
-        return view('posts.show', compact('post'));
-
-    }
-    */
 
     public function show(Post $post){
 
@@ -63,48 +38,91 @@ class PostsController extends Controller
         return view('posts.create');
 
     }
+    
+    public function store(Request $request){
 
-    public function store(){
-        /*
-        $post = new Post;
+        $post = new Post();
+        $this->validate($request, [
+            'title' => 'required|min:3|max:20',
+            'image' => 'required',
+            'description' => 'required|max:130',
+            'body' => 'required'
+        ]);
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->body = $request->body;
+        $post->user_id = auth()->id();
 
-        $post->title = request('title');
-        $post->body = request('body');
+		if($request->hasFile('image')) {
+            $file = Input::file('image');
+            //getting timestamp
+            $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
+            
+            //$name = $timestamp. '-' .$file->getClientOriginalName();
+            $name = $timestamp. '-img';
+            
+            $post->image = $name;
+
+            $file->move(public_path().'/images/', $name);
+        }
 
         $post->save();
-        */
-        /*
-        Post::create([
+        //return $this->create()->with('success', 'Новость добавлена');
 
-            'title' => request('title'),
-            'body' => request('body')
+        Session::flash('message', "Новость добавлена");
+        return redirect('/posts');
+    }
 
-        ]);
-        */
-        $this->validate(request(),[
+    public function edit(Post $post){
+
+        return view('posts.edit', compact('post'));
+
+    }
+
+    public function update(Request $request){
+
+        $post = Post::findOrFail($request->id);
+
+        $this->validate($request, [
             'title' => 'required|min:3|max:20',
+            'image' => 'required',
             'description' => 'required|max:130',
             'body' => 'required'
         ]);
 
-        //see in User Model - publish function
-        //auth()->user()->publish( new Post( request(['title', 'body']) ) );
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->body = $request->body;
+        $post->user_id = auth()->id();
 
-        Post::create([
-            'title' => request('title'),
-            'description' => request('description'),
-            'body' => request('body'),
-            'user_id' => auth()->id()
-        ]);
+		if($request->hasFile('image')) {
+            $file = Input::file('image');
+            //getting timestamp
+            $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
+            
+            //$name = $timestamp. '-' .$file->getClientOriginalName();
+            $name = $timestamp. '-img';
+            
+            $post->image = $name;
 
-        /* Method upper can be swapped with this, but delete publish func in User Model
-        Post::create([
-            'title' => request('title'),
-            'body' => request('body'),
-            'user_id' => auth()->id()
-        ]);
-        */
+            $file->move(public_path().'/images/', $name);
+        }
 
+        $post->update();
+        //return redirect('/posts')->with('success', 'Новость обновлена');
+
+        Session::flash('message', "Новость обновлена");
+        return redirect('/posts');
+
+    }
+
+    public function destroy(Post $post){
+
+        $post = Post::findOrFail($post->id);
+
+        $post->delete();
+
+        Session::flash('message', "Новость удалена");
         return redirect('/posts');
     }
 }

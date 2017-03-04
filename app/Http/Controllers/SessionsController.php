@@ -18,7 +18,7 @@ class SessionsController extends Controller
     public function store(){
 
         if ( auth()->attempt(request(['email','password']))){
-            return redirect('/posts/create');
+            return redirect('/admin');
         }
 
         return back()->withErrors([

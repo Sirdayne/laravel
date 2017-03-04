@@ -10,7 +10,7 @@
         
         <div class="wrap">
            
-            <img src="/assets/img/new_inner.png" alt="">
+            <img src="/images/{{ $post->image }}" alt="">
             <div class="new-inner-date">02.02.2017</div>
             
             <p>{{ $post->body }}</p>
@@ -29,9 +29,9 @@
             {{--<p>{{ $post->user->name }}</p>--}}
 
             <div class="new-navigation">
-                <a href=""><div class="new-prev"><img src="/assets/img/arrow-left.png" alt=""><span class="new-nav">Пред.</span></div></a>
+                <!--<a href=""><div class="new-prev"><img src="/assets/img/arrow-left.png" alt=""><span class="new-nav">Пред.</span></div></a>-->
                 <div class="new-all"><a href="/posts"><button class="btn-types">Все новости</button></a></div>
-                <a href=""><div class="new-next"><img src="/assets/img/arrow-right.png" alt=""><span class="new-nav">След.</span></div></a>
+                <!--<a href=""><div class="new-next"><img src="/assets/img/arrow-right.png" alt=""><span class="new-nav">След.</span></div></a>-->
             </div>
             
             <div class="similar-news">

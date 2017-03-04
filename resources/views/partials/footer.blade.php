@@ -330,22 +330,5 @@
         });
     </script>
 
-
-<script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
-    
-    <script type="text/javascript">
-    var map;
-
-    DG.then(function () {
-        map = DG.map('map', {
-            center: [51.094528, 71.427312],
-            zoom: 17
-        });
-        DG.marker([51.094528, 71.427312]).addTo(map);
-    });
-    </script>
-
-
-
 </body>
 </html>

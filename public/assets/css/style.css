@@ -1732,6 +1732,8 @@ body{
     
     padding-top: 25px;
     padding-bottom: 50px;
+
+    min-height: calc(100vh - 200px);
     
     text-align: center;
     
@@ -1985,12 +1987,37 @@ body{
 .portfolio-part{
     float: left;
     width: 100%;
+
+    text-align: left;
+}
+
+.types-part{
+    float: left;
+    width: 100%;
     
     display: none;
 }
 
-.portfolio-part.pf-active{
+.types-part.pf-active{
     display: block;
+}
+
+.section .types-part{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+    text-align: center;
+}
+
+.portfolio-photo{
+    display: none;
+
+    position: relative;
+}
+
+.portfolio-photo.pf-active{
+    display: inline-block;
 }
 
 .section .portfolio-part{
@@ -2468,6 +2495,10 @@ body{
     box-sizing: border-box;
     border: 2px solid #5d4063;
 }
+.review-part{
+    position: relative;
+}
+
 .sew-margin{
     margin-top: -50px;
     background: #fff;
@@ -2488,6 +2519,16 @@ body{
 }
 .jal-img img{
     width: 100%;
+}
+.review-img{
+    text-align: left;
+    height: 250px;
+    overflow: hidden;
+}
+.review-img img{
+    display: inline-block;
+    height: inherit;
+    width: auto;
 }
 .jal-text h1{
     display: block;
@@ -2640,6 +2681,8 @@ body{
     
     padding-top: 40px;
     padding-bottom: 70px;
+
+    min-height: calc(100vh - 200px);
     
     box-sizing: border-box;
 }
@@ -2655,9 +2698,46 @@ body{
     
     box-sizing: border-box;
     border: 2px solid rgba(0,0,0,0);
+    position: relative;
 }
 .new:hover{
     border: 2px solid #5d4063;
+}
+.new-options{
+    position: absolute;
+
+    top: 3px;
+    right: -30px;
+    height: 20px;
+    width: auto;
+}
+.portfolio-part .new-options{
+    top: 14px;
+    right: 5px;
+}
+.new-edit{
+    float: left;
+    width: 20px;
+    height: 20px;
+
+    margin: 0 5px;
+
+    background: url(../img/new-edit.png) center center no-repeat;
+    background-size: cover;
+
+    cursor: pointer;
+}
+.new-delete{
+    float: left;
+    width: 20px;
+    height: 20px;
+
+    margin: 0 5px;
+
+    background: url(../img/new-delete.png) center center no-repeat;
+    background-size: cover;
+
+    cursor: pointer;
 }
 .new-img{
     float: left;
@@ -2862,7 +2942,9 @@ body{
     
     height: 40px;
     margin-top: 3px;
-    
+}
+.new-all{
+    width: 100%;
 }
 .new-prev img, .new-next img{
     float: left;

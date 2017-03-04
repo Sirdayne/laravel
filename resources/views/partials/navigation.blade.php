@@ -32,4 +32,17 @@
         <div class="nav-tel">
             <a href="tel:+87172250426">8(7172)25-04-26</a>
         </div>
+
+        @if(auth()->user())
+            <div class="lara-panel">
+                <div class="lara-panel-row">Профиль: {{ auth()->user()->name }}</div>
+                <div class="lara-panel-row"><a href="/admin">В админ панель</a></div>
+                <div class="lara-panel-row"><a href="/logout">Выйти</a></div>
+                <div class="lara-burger">
+                    <div class="lara-b-1"></div>
+                    <div class="lara-b-2"></div>
+                    <div class="lara-b-3"></div>
+                </div>
+            </div>
+        @endif
 </div>

@@ -2,12 +2,12 @@
 
 @section('content')
 
-    <div class="navigation-title">Новая новость</div>
+    <div class="navigation-title">Новая картинка в портфолио</div>
 
     <section class="lara-section">
     <div class="wrap">
 
-    <h3>Введите данные новости в форму</h3>
+    <h3>Введите данные картинки в форму</h3>
     
     @if(isset($success))
         <div class="lara-success"> {{$success}} </div>
@@ -22,12 +22,10 @@
     </div>
     @endif
 
-    <form method="POST" action="/posts/store" enctype="multipart/form-data">
+    <form method="POST" action="/portfolio/store" enctype="multipart/form-data">
         {{ csrf_field() }}
-        <input type="text" name="title" placeholder="Заголовок">
+        <input type="number" name="category" placeholder="Категория по номеру">
         <input type="file" name="image">
-        <textarea name="description" placeholder="Краткое описание"></textarea>
-        <textarea name="body" placeholder="Напишите новость..."></textarea>
         <button type="submit">Отправить</button>
     </form>
 

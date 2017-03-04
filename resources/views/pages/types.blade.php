@@ -38,7 +38,7 @@
                 </div>
                 
 
-                <div class="portfolio-part">
+                <div class="types-part">
                        
                         <button class="btn-back">ВЕРНУТЬСЯ НАЗАД</button>
                         
@@ -103,7 +103,7 @@
                 </div>
                 
 
-                <div class="portfolio-part">
+                <div class="types-part">
                        
                         <button class="btn-back">ВЕРНУТЬСЯ НАЗАД</button>
                         
@@ -168,7 +168,7 @@
                 </div>
                 
 
-                <div class="portfolio-part">
+                <div class="types-part">
                        
                         <button class="btn-back">ВЕРНУТЬСЯ НАЗАД</button>
                         
@@ -233,7 +233,7 @@
                 </div>
                 
 
-                <div class="portfolio-part">
+                <div class="types-part">
                        
                         <button class="btn-back">ВЕРНУТЬСЯ НАЗАД</button>
                         
@@ -298,7 +298,7 @@
                 </div>
                 
 
-                <div class="portfolio-part">
+                <div class="types-part">
                        
                         <button class="btn-back">ВЕРНУТЬСЯ НАЗАД</button>
                         
@@ -363,7 +363,7 @@
                 </div>
                 
 
-                <div class="portfolio-part">
+                <div class="types-part">
                        
                         <button class="btn-back">ВЕРНУТЬСЯ НАЗАД</button>
                         

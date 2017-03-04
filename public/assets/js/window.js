@@ -1,4 +1,10 @@
 $(document).ready(function(){
+
+    /* Laravel admin panel */
+
+    $('.lara-burger').click(function() {
+        $('.lara-panel').toggleClass('lara-active');
+    });
 	
 	/* BURGER */
 	
@@ -290,11 +296,13 @@ $(document).ready(function(){
         var indexPortfolioFilter = $('.portfolio-filter').index(this);
         
         if (indexPortfolioFilter == 0){
-            $('.portfolio-part').addClass('pf-active');
+            $('.portfolio-photo').removeClass('pf-active');
+            $('.portfolio-photo').addClass('pf-active');
         }
         else{
-            $('.portfolio-part').removeClass('pf-active');
-            $('.portfolio-part').eq(indexPortfolioFilter).addClass('pf-active');
+            var indexPhoto = indexPortfolioFilter;
+            $('.portfolio-photo').removeClass('pf-active');
+            $('.portfolio-photo-'+indexPhoto).addClass('pf-active');
         }
         
     });
@@ -303,39 +311,39 @@ $(document).ready(function(){
     /* TYPES */
     $('.btn-types').click(function() {
     
-        $('.portfolio-part').addClass('pf-active');
+        $('.types-part').addClass('pf-active');
         $('.types-section').addClass('pf-active');
 
     });
     
     $('.btn-back').click(function() {
     
-        $('.portfolio-part').removeClass('pf-active');
+        $('.types-part').removeClass('pf-active');
         $('.types-section').removeClass('pf-active');
 
     });
 	
 	$('#decor-select').change(function(){
 		if($(this).val() == 'd-1'){ 
-			window.location.href = "sew.html";
+			window.location.href = "/sew";
 		}
 		if($(this).val() == 'd-2'){ 
-			window.location.href = "decor_panels.html";
+			window.location.href = "/decor";
 		}
 		if($(this).val() == 'd-3'){ 
-			window.location.href = "wallpapers.html";
+			window.location.href = "/wallpapers";
 		}
 		if($(this).val() == 'd-4'){ 
-			window.location.href = "jalousie_roll.html";
+			window.location.href = "/jalousie";
 		}
 		if($(this).val() == 'd-5'){ 
-			window.location.href = "floor_slabs.html";
+			window.location.href = "/floor";
 		}
 		if($(this).val() == 'd-6'){ 
-			window.location.href = "business.html";
+			window.location.href = "/business";
 		}
 		if($(this).val() == 'd-7'){ 
-			window.location.href = "dealers.html";
+			window.location.href = "/dealers";
 		}
     });
     
