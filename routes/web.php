@@ -49,6 +49,11 @@ Route::post('/portfolio/store', 'PortfolioController@store');
 Route::get('/portfolio/destroy/{portfolio}', 'PortfolioController@destroy');
 
 
+Route::post('/feedback/send_mail', 'FeedbackController@send_mail');
+Route::post('/feedback/send_calc', 'FeedbackController@send_calc');
+Route::post('/feedback/send_contacts', 'FeedbackController@send_contacts');
+
+
 Route::get('/register', 'RegistrationController@create');
 Route::post('/register', 'RegistrationController@store');
 
@@ -57,3 +62,4 @@ Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy');
 
 Route::get('/admin', 'AdminController@index');
+Route::get('/home', 'PagesController@index');

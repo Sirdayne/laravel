@@ -110,7 +110,7 @@
     jQuery(function($){$("#client-tel-for-consult-2").mask("+7(999)999-99-99");});
 </script>
    
-<script src="/assets/js/script.js"></script>
+<!--<script src="/assets/js/script.js"></script>-->
 
 </body>
 </html>

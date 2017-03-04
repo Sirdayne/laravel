@@ -9,18 +9,13 @@
     <div class="contacts-section">
         <div class="wrap">
             <div class="contacts-form">
-                <form method="post" action="">
-                    <!-- Hidden Required Fields -->
-                    <input type="hidden" name="project_name" value="asan.kz">
-                    <input type="hidden" name="admin_email" value="tester@ginnova.kz">
-                    <input type="hidden" name="form_subject" value="Заявка">
-                    <!-- END Hidden Required Fields -->
-
+                <form method="POST" action="/feedback/send_contacts">
+                    {{ csrf_field() }}
                     <div class="contact-row"><h3>Будем рады ответить на все ваши вопросы</h3></div>
 
-                    <div class="contact-row"><input type="text" name="Имя" placeholder="Имя" required></div>
-                    <div class="contact-row"><input type="tel" id="client-tel-for-consult" name="Телефон" placeholder="Телефон" required></div>
-                    <div class="contact-row"><textarea cols="30" rows="10" name="Сообщение" placeholder="Сообщение"></textarea></div>
+                    <div class="contact-row"><input type="text" name="Name" placeholder="Имя" required></div>
+                    <div class="contact-row"><input type="tel" id="client-tel-for-consult" name="Telephone" placeholder="Телефон" required></div>
+                    <div class="contact-row"><textarea cols="30" rows="10" name="Text" placeholder="Сообщение"></textarea></div>
 
                     <div class="contact-row"><button class="btn-contacts">Отправить</button></div>
 

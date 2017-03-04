@@ -2,6 +2,10 @@
 
 @section('content')
 
+    @if (Session::has('message'))
+        <div class="lara-success">{{ Session::get('message') }}</div>
+    @endif
+
     <header class="header">
         <div class="header-slide hs-5">
 
