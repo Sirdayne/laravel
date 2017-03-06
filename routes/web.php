@@ -54,8 +54,8 @@ Route::post('/feedback/send_calc', 'FeedbackController@send_calc');
 Route::post('/feedback/send_contacts', 'FeedbackController@send_contacts');
 
 
-Route::get('/register', 'RegistrationController@create');
-Route::post('/register', 'RegistrationController@store');
+//Route::get('/register', 'RegistrationController@create');
+//Route::post('/register', 'RegistrationController@store');
 
 Route::get('/login', 'SessionsController@create');
 Route::post('/login', 'SessionsController@store');
