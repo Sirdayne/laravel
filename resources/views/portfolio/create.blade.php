@@ -24,7 +24,12 @@
 
     <form method="POST" action="/portfolio/store" enctype="multipart/form-data">
         {{ csrf_field() }}
-        <input type="number" name="category" placeholder="Категория по номеру">
+        <select class="lara-select" name="category">
+           		<option value="1">Для кухни</option>
+            	<option value="2">Для спальни</option>
+            	<option value="3">Для зала</option>
+            	<option value="4">Для офиса</option>
+            </select>
         <input type="file" name="image">
         <button type="submit">Отправить</button>
     </form>

@@ -26,33 +26,28 @@ Route::get('/floor', 'PagesController@floor');
 Route::get('/business', 'PagesController@business');
 Route::get('/dealers', 'PagesController@dealers');
 
-
 Route::get('/posts', 'PostsController@index');
 Route::get('/posts/create', 'PostsController@create');
-Route::get('/posts/{post}', 'PostsController@show');
 Route::post('/posts/store', 'PostsController@store');
-//Route::post('/posts/{post}/comments', 'CommentsController@store');
+Route::get('/posts/{post}', 'PostsController@show');
 Route::get('/posts/edit/{post}', 'PostsController@edit');
 Route::post('/posts/update', 'PostsController@update');
 Route::get('/posts/destroy/{post}', 'PostsController@destroy');
-
+//Route::post('/posts/{post}/comments', 'CommentsController@store');
 
 Route::get('/reviews', 'ReviewController@index');
 Route::get('/reviews/create', 'ReviewController@create');
 Route::post('/reviews/store', 'ReviewController@store');
 Route::get('/reviews/destroy/{review}', 'ReviewController@destroy');
 
-
 Route::get('/portfolio', 'PortfolioController@index');
 Route::get('/portfolio/create', 'PortfolioController@create');
 Route::post('/portfolio/store', 'PortfolioController@store');
 Route::get('/portfolio/destroy/{portfolio}', 'PortfolioController@destroy');
 
-
 Route::post('/feedback/send_mail', 'FeedbackController@send_mail');
 Route::post('/feedback/send_calc', 'FeedbackController@send_calc');
 Route::post('/feedback/send_contacts', 'FeedbackController@send_contacts');
-
 
 //Route::get('/register', 'RegistrationController@create');
 //Route::post('/register', 'RegistrationController@store');
@@ -61,5 +56,8 @@ Route::get('/login', 'SessionsController@create');
 Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy');
 
-Route::get('/admin', 'AdminController@index');
+Route::group( ['middleware' => 'checkAuth' ], function(){
+    Route::get('/admin', 'AdminController@index');
+});
+
 Route::get('/home', 'PagesController@index');

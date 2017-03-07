@@ -14,7 +14,7 @@
             <div class="new-inner-date">02.02.2017</div>
             
             <p>{{ $post->body }}</p>
-            
+            <!--
             <div class="share">
                 <div class="share-block">
                     <div class="share-txt">Поделиться:</div>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            
+            -->
             {{--<p>{{ $post->user->name }}</p>--}}
 
             <div class="new-navigation">
@@ -33,7 +33,7 @@
                 <div class="new-all"><a href="/posts"><button class="btn-types">Все новости</button></a></div>
                 <!--<a href=""><div class="new-next"><img src="/assets/img/arrow-right.png" alt=""><span class="new-nav">След.</span></div></a>-->
             </div>
-            
+            <!--
             <div class="similar-news">
                 <div class="sn-title">ЧИТАЙТЕ ТАКЖЕ</div>
                 
@@ -57,7 +57,7 @@
                 </div>
                 
             </div>
-            
+            -->
         </div>
         
     </section>

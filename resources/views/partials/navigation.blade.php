@@ -35,9 +35,12 @@
 
         @if(auth()->user())
             <div class="lara-panel">
-                <div class="lara-panel-row">Профиль: {{ auth()->user()->name }}</div>
-                <div class="lara-panel-row"><a href="/admin">В админ панель</a></div>
-                <div class="lara-panel-row"><a href="/logout">Выйти</a></div>
+                <div class="lara-panel-row lara-panel-user">Профиль: {{ auth()->user()->name }}</div>
+                <a href="/admin"><div class="lara-panel-row">В админ. панель</div></a>
+                <a href="/posts/create"><div class="lara-panel-row">Добавить новость</div></a>
+                <a href="/portfolio/create"><div class="lara-panel-row">Добавить картинку</div></a>
+                <a href="/reviews/create"><div class="lara-panel-row">Добавить отзыв</div></a>
+                <a href="/logout"><div class="lara-panel-row">Выйти</div></a>
                 <div class="lara-burger">
                     <div class="lara-b-1"></div>
                     <div class="lara-b-2"></div>

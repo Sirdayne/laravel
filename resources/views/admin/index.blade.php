@@ -7,9 +7,12 @@
     <section class="lara-section">
     <div class="wrap">
 
-        <div class="lara-row"><a href="/posts/create">Добавить новость</a></div>
-        <div class="lara-row"><a href="/portfolio/create">Добавить картинку в портфолио</a></div>
-        <div class="lara-row"><a href="/reviews/create">Добавить отзыв</a></div>
+        <a href="/posts/create"><div class="lara-admin">Добавить новость</div></a>
+        <a href="/posts/"><div class="lara-admin">Изменить новости</div></a>
+        <a href="/portfolio/create"><div class="lara-admin">Добавить картинку в портфолио</div></a>
+        <a href="/portfolio/"><div class="lara-admin">Удалить картинки в портфолио</div></a>
+        <a href="/reviews/create"><div class="lara-admin">Добавить отзыв</div></a>
+        <a href="/reviews/"><div class="lara-admin">Удалить отзывы</div></a>
 
     </div>
     </section>

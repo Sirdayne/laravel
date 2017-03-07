@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Portfolio;
+
+use Illuminate\Http\Request;
 
 use Carbon\Carbon;
 
@@ -14,7 +14,7 @@ use Session;
 
 class PortfolioController extends Controller
 {
-     public function __construct(){
+    public function __construct(){
         $this->middleware('auth')->except(['index']);
     }
 
